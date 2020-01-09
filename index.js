@@ -2,7 +2,7 @@ const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const url = require("url");
-const typeExt = require("./ext/types.json");
+const typeExt = require("./server/ext/types");
 
 const server = http.createServer(handleRequest);
 const port = process.env.PORT || 3000;
