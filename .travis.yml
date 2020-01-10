@@ -1,0 +1,11 @@
+language: node_js
+node_js:
+- 7
+
+before_install:
+- npm install -g socket.io
+- npm install -g jshint
+
+script:
+- jshint index.js
+- jshint server/
