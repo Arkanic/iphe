@@ -13,7 +13,7 @@ function handleRequest(request, response) {
         pathname = "/index.html";
     }
     pathname = "/client" + pathname;
-    let ext = path.extname(extname)
+    let ext = path.extname(extname);
     let contentType = typeExt[ext] || "text/plain";
 
     fs.readFile(__dirname + pathname, function(error, data) {
@@ -25,4 +25,4 @@ function handleRequest(request, response) {
             return response.end(data);
         }
     });
-};
+}
