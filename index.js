@@ -2,7 +2,6 @@ const http = require("http");
 const path = require("path");
 const fs = require("fs");
 const url = require("url");
-const typeExt = require("./server/ext/types");
 
 const server = http.createServer(handleRequest);
 const port = process.env.PORT || 3000;
@@ -14,6 +13,15 @@ function handleRequest(request, response) {
     }
     pathname = "/client" + pathname;
     let ext = path.extname(extname);
+    const typeExt = {
+        ".html": "text/html",
+        ".htm": "text/html",
+        ".css": "text/css",
+        ".js": "text/javascript",
+        ".png": "image/png",
+        ".jpg": "image/jpg",
+        ".json": "application/json"
+    };
     let contentType = typeExt[ext] || "text/plain";
 
     fs.readFile(__dirname + pathname, function(error, data) {
