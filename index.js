@@ -30,7 +30,7 @@ function handleRequest(request, response) {
             return response.end("Error loading: " + pathname);
         } else {
             response.writeHead(200, {"Content-Type": contentType});
-            return response.end(data);
+            response.end(data);
         }
     });
 }
