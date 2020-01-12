@@ -4,17 +4,16 @@ const fs = require("fs");
 const url = require("url");
 
 const server = http.createServer(handleRequest);
-
 const port = process.env.PORT || 3000;
-
 server.listen(port);
 
 function handleRequest(request, response) {
   let pathname = request.url;
 
   if(pathname == "/") {
-    pathname = "/client/play.html";
+    pathname = "/index.html";
   }
+  pathname = "/client" + pathname;
 
   let ext = path.extname(pathname);
 
