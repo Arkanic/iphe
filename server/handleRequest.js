@@ -16,7 +16,7 @@ module.exports = function(request, response) {
 
   let contentType = typeExt[ext] || "text/plain";
 
-  fs.readFile(__dirname + pathname, function(error, data) {
+  fs.readFile(pathname, function(error, data) {
     if(error) {
       response.writeHead(500);
       return response.end("Error loading: " + pathname);
