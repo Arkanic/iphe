@@ -28,9 +28,8 @@ function handleRequest(request, response) {
         if(error) {
             response.writeHead(500);
             return response.end("Error loading: " + pathname);
-        } else {
-            response.writeHead(200, {"Content-Type": contentType});
-            response.end(data);
         }
+        response.writeHead(200, {"Content-Type": contentType});
+        response.end(data);
     });
 }
