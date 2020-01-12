@@ -4,7 +4,7 @@ const fs = require("fs");
 const url = require("url");
 
 const server = http.createServer(handleRequest);
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 8000;
 server.listen(port);
 function handleRequest(request, response) {
     let pathname = request.url;
