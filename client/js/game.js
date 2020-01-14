@@ -1,5 +1,14 @@
 "use strict";
 
-const ui = require("ui.js");
+function toggleUI(id) {
+    let idobject = document.getElementById(id).catch(() => {
+        return;
+    });
+    if(idobject.style.display == "none") {
+        idobject.style.display = "block";
+    } else {
+        idobject.style.display = "none";
+    }
+}
 
-ui.toggleUI("h");
+toggleUI("h");
