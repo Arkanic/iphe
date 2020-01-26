@@ -3,6 +3,7 @@ const path = require("path");
 const fs = require("fs");
 const url = require("url");
 const typeExt = require("./server/types/types");
+const unknownfile = require("./shared/error/unknownfile");
 
 const server = http.createServer(handleRequest);
 const port = process.env.PORT || 3000;
@@ -23,7 +24,7 @@ function handleRequest(request, response) {
   fs.readFile(__dirname + pathname, function(error, data) {
     if(error) {
       response.writeHead(500);
-      return response.end("Error loading: " + pathname);
+      return response.end(unknownfile);
     }
     response.writeHead(200, {"Content-Type": contentType});
     response.end(data);
