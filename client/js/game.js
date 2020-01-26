@@ -12,3 +12,5 @@ function toggleUI(id) {
 }
 
 toggleUI("h");
+
+document.getElementById("h").style.display = "block";
