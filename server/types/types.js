@@ -5,4 +5,4 @@ module.exports = {
     ".js": "text/javascript",
     ".json": "application/json",
     ".png": "image/png"
-}
+};
