@@ -9,3 +9,4 @@ before_install:
 script:
 - jshint index.js
 - jshint server/
+- bash update_require.sh
