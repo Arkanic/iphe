@@ -1,0 +1,3 @@
+[submodule "tools/updaters/clientside-require"]
+	path = tools/updaters/clientside-require
+	url = https://github.com/uladkasach/clientside-require
