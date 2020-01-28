@@ -1,1 +1,1 @@
-git submodule add https://github.com/uladkasach/clientside-require clientside-require
+git submodule add https://github.com/uladkasach/clientside-require
