@@ -10,24 +10,27 @@ const port = process.env.PORT || 3000;
 server.listen(port);
 
 function handleRequest(request, response) {
-  let pathname = request.url;
+    let pathname = request.url;
 
-  if(pathname == "/") {
-    pathname = "/index.html";
-  }
+    if(pathname == "/") {
+        pathname = "/index.html";
+    }
+    if(pathname == "/js/lib/clientside-require.js") {
+        pathname = "/node_modules/clientside-require/dist/bundle.js";
+    }
     pathname = "/client" + pathname;
   
 
-  let ext = path.extname(pathname);
+    let ext = path.extname(pathname);
 
-  let contentType = typeExt[ext] || "text/plain";
+    let contentType = typeExt[ext] || "text/plain";
 
-  fs.readFile(__dirname + pathname, function(error, data) {
-    if(error) {
-      response.writeHead(500);
-      return response.end(unknownfile);
-    }
-    response.writeHead(200, {"Content-Type": contentType});
-    response.end(data);
-  });
+    fs.readFile(__dirname + pathname, function(error, data) {
+        if(error) {
+            response.writeHead(500);
+            return response.end(unknownfile);
+        }
+        response.writeHead(200, {"Content-Type": contentType});
+        response.end(data);
+    });
 }
