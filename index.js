@@ -15,9 +15,6 @@ function handleRequest(request, response) {
     if(pathname == "/") {
         pathname = "/index.html";
     }
-    if(pathname == "/js/lib/clientside-require.js") {
-        pathname = "/node_modules/clientside-require/dist/bundle.js";
-    }
     pathname = "/client" + pathname;
   
 
