@@ -15,7 +15,9 @@ function handleRequest(request, response) {
   if(pathname == "/") {
     pathname = "/index.html";
   }
-  pathname = "/client" + pathname;
+  if(!pathname.split("/")[1] == "shared") {
+    pathname = "/client" + pathname;
+  }
 
   let ext = path.extname(pathname);
 
