@@ -1,3 +1,4 @@
 "use strict";
+const ui = load("/client/js/ui/ui.js");
 
-toggleUI("h");
+ui.toggleUI("h");
