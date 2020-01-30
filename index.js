@@ -15,7 +15,6 @@ function handleRequest(request, response) {
   if(pathname == "/") {
     pathname = "/index.html";
   }
-    
     pathname = "/client" + pathname;
   
 
