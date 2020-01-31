@@ -1,4 +1,4 @@
-module.exports = {
+let module.exports = {
     ".html": "text/html",
     ".htm": "text/html",
     ".css": "text/css",
