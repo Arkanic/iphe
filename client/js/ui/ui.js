@@ -1,10 +1,7 @@
-let module = {};
-module.exports = {
-    toggleUI: function(id) {
-        if(document.getElementById(id).style.display == "none") {
-            document.getElementById(id).style.display = "block";
-        } else {
-            document.getElementById(id).style.display = "none";
-        }
+export function toggleUI(id) {
+    if(document.getElementById(id).style.display == "none") {
+        document.getElementById(id).style.display = "block";
+    } else {
+        document.getElementById(id).style.display = "none";
     }
 }
