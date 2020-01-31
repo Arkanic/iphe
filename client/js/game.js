@@ -1,4 +1,4 @@
 "use strict";
-import * as ui from "./js/ui/ui.js";
+import {toggleUI} from "./js/ui/ui.js";
 
 ui.toggleUI("h");
