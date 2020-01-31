@@ -13,12 +13,10 @@ fs.readdir(directoryPath, (err, files) => {
 
     files.forEach((file) => {
         console.log("[Generator]: found " + file);
-        sprites.push(file);
+        sprites.push("./shared/img/" + file);
     });
-
+    console.log(sprites);
 });
-
-console.log("[Generator]: found sprites, packing now");
 
 Spritesmith.run({
     src: sprites,
@@ -28,6 +26,7 @@ Spritesmith.run({
         throw err;
     }
     fs.writeFileSync(__dirname + "/shared/img_output/sprites.png", result.img);
-    fs.writeFileSync(__dirname + "/shared/img_output/sprites.json", result.coordinates);
+    fs.writeFileSync(__dirname + "/shared/img_output/sprites.json", JSON.stringify(result.coordinates));
+    console.log(result.coordinates);
     console.log(result.properties);
-})
+});
