@@ -42,4 +42,12 @@ io.sockets.on("connection", (socket) => {
     socket.on("player-join", () => {
         players[socket.id] = new ships.gunner((Math.random() * 100) - 50, (Math.random() * 100) - 50);
     });
+    socket.on("disconnect", () => {
+        delete players[socket.id];
+        socket.broadcast.emit("player-leave");
+    })
+    socket.on("movement", (movement) => {
+        players[socket.id].movementInput(movement);
+        players[socket.id].update();
+    })
 });
