@@ -36,3 +36,10 @@ const io = require("socket.io").listen(server);
 
 const ships = require("./server/game/types/ships");
 
+let players = {};
+
+io.sockets.on("connection", (socket) => {
+    socket.on("player-join", () => {
+        players[socket.id] = new ships.gunner((Math.random() * 100) - 50, (Math.random() * 100) - 50);
+    });
+});
