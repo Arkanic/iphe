@@ -51,3 +51,14 @@ io.sockets.on("connection", (socket) => {
         players[socket.id].update();
     });
 });
+
+setInterval(() => {
+    let splayers = {};
+    for(let i in players) {
+        splayers[i] = {}
+        splayers[i].position.x = players[i].position.x;
+        splayers[i].position.y = players[i].position.y;
+        splayers[i].angle = players[i].angle;
+    }
+    io.sockets.emit("state", splayers);
+}, 1000/60); // repeat 60 times per 1 second
