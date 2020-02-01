@@ -31,3 +31,8 @@ function handleRequest(request, response) {
         response.end(data);
     });
 }
+
+const io = require("socket.io").listen(server);
+
+const ships = require("./server/game/types/ships");
+
