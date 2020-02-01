@@ -49,5 +49,5 @@ io.sockets.on("connection", (socket) => {
     socket.on("movement", (movement) => {
         players[socket.id].movementInput(movement);
         players[socket.id].update();
-    })
+    });
 });
